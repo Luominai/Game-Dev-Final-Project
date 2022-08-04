@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     private float timeLeft = 0;
     private Rigidbody rigidbody;
     private bool inMidair;
+    string axisName = "Horizontal";
 
     public float speed = 3f;
     public float timer = .5f;
@@ -24,6 +25,10 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        if (leftHandMode)
+        {
+            axisName = "HorizontalLeft";
+        }
     }
 
     // Update is called once per frame
@@ -37,16 +42,14 @@ public class Movement : MonoBehaviour
             pressingA = Input.GetKey(KeyCode.J);
             pressingS = Input.GetKey(KeyCode.K);
             pressingD = Input.GetKey(KeyCode.L);
-            horizontalMovementLeft();
         } else
         {
             pressingW = Input.GetKey(KeyCode.W);
             pressingA = Input.GetKey(KeyCode.A);
             pressingS = Input.GetKey(KeyCode.S);
             pressingD = Input.GetKey(KeyCode.D);
-            horizontalMovement();
         }
-
+        horizontalMovement();
         dash();
         jump();
         //print(movingLeft + ", " + movingRight);
@@ -55,52 +58,9 @@ public class Movement : MonoBehaviour
 
     void horizontalMovement()
     {
-        var axis = Input.GetAxis("Horizontal");
+        var axis = Input.GetAxis(axisName);
+
         int input = 0;
-
-        if (pressingA && axis < 0)
-        {
-            input = -1;
-        }
-        if (pressingD && axis > 0)
-        {
-            input = 1;
-        }
-
-        if (input < 0)
-        {
-            //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is right
-            if (Mathf.Abs(xVelocity) < speed)
-            {
-                rigidbody.velocity = new Vector3(-1 * speed, yVelocity, 0);
-            }
-            else
-            //changes direction while keeping velocity if you were previously moving right
-            {
-                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity) * -1, yVelocity, 0);
-            }
-        }
-
-        if (input > 0)
-        {
-            //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is left
-            if (Mathf.Abs(xVelocity) < speed)
-            {
-                rigidbody.velocity = new Vector3(speed, yVelocity, 0);
-            }
-            else
-            //changes direction while keeping velocity if you were previously moving left
-            {
-                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity), yVelocity, 0);
-            }
-        }
-    }
-
-    void horizontalMovementLeft()
-    {
-        var axis = Input.GetAxis("HorizontalLeft");
-        int input = 0;
-
         if (pressingA && axis < 0)
         {
             input = -1;

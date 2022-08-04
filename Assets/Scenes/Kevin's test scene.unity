@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   timer: 0.5
+  leftHandMode: 1
 --- !u!1 &2070674782
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +363,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070674782}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 17e987aad65976d4ca186fe130c03046, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

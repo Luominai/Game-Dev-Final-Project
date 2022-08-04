@@ -14,6 +14,13 @@ public class Movement : MonoBehaviour
 
     public float speed = 3f;
     public float timer = .5f;
+    public bool leftHandMode = false;
+
+    private bool pressingW;
+    private bool pressingA;
+    private bool pressingS;
+    private bool pressingD;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -24,8 +31,24 @@ public class Movement : MonoBehaviour
     {
         xVelocity = rigidbody.velocity.x;
         yVelocity = rigidbody.velocity.y;
-        horizontalMovement();
-        dashAndJump();
+        if (leftHandMode)
+        {
+            pressingW = Input.GetKey(KeyCode.I);
+            pressingA = Input.GetKey(KeyCode.J);
+            pressingS = Input.GetKey(KeyCode.K);
+            pressingD = Input.GetKey(KeyCode.L);
+            horizontalMovementLeft();
+        } else
+        {
+            pressingW = Input.GetKey(KeyCode.W);
+            pressingA = Input.GetKey(KeyCode.A);
+            pressingS = Input.GetKey(KeyCode.S);
+            pressingD = Input.GetKey(KeyCode.D);
+            horizontalMovement();
+        }
+
+        dash();
+        jump();
         //print(movingLeft + ", " + movingRight);
         //print(Input.GetAxis("Horizontal"));
     }
@@ -35,16 +58,15 @@ public class Movement : MonoBehaviour
         var axis = Input.GetAxis("Horizontal");
         int input = 0;
 
-        if (Input.GetKey(KeyCode.A) && axis < 0)
+        if (pressingA && axis < 0)
         {
             input = -1;
         }
-        if (Input.GetKey(KeyCode.D) && axis > 0)
+        if (pressingD && axis > 0)
         {
             input = 1;
         }
 
-        //if pressing A
         if (input < 0)
         {
             //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is right
@@ -58,7 +80,7 @@ public class Movement : MonoBehaviour
                 rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity) * -1, yVelocity, 0);
             }
         }
-        //if pressing D
+
         if (input > 0)
         {
             //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is left
@@ -74,29 +96,93 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void dashAndJump()
+    void horizontalMovementLeft()
     {
+        var axis = Input.GetAxis("HorizontalLeft");
+        int input = 0;
+
+        if (pressingA && axis < 0)
+        {
+            input = -1;
+        }
+        if (pressingD && axis > 0)
+        {
+            input = 1;
+        }
+
+        if (input < 0)
+        {
+            //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is right
+            if (Mathf.Abs(xVelocity) < speed)
+            {
+                rigidbody.velocity = new Vector3(-1 * speed, yVelocity, 0);
+            }
+            else
+            //changes direction while keeping velocity if you were previously moving right
+            {
+                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity) * -1, yVelocity, 0);
+            }
+        }
+
+        if (input > 0)
+        {
+            //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is left
+            if (Mathf.Abs(xVelocity) < speed)
+            {
+                rigidbody.velocity = new Vector3(speed, yVelocity, 0);
+            }
+            else
+            //changes direction while keeping velocity if you were previously moving left
+            {
+                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity), yVelocity, 0);
+            }
+        }
+    }
+
+    void dash()
+    {
+        float xComponent = 0;
+        float yComponent = 0;
+
         //if you left click and your boost is off cooldown
         if (Input.GetKeyDown(KeyCode.Mouse0) && timeLeft <= 0)
         {
             //determine which direction to add the force
-            float sign = Mathf.Abs(xVelocity) / xVelocity;
+            if (pressingW)
+            {
+                yComponent += 1;
+            }
+            if (pressingA)
+            {
+                xComponent += -1;
+            }
+            if (pressingS)
+            {
+                yComponent += -1;
+            }
+            if (pressingD)
+            {
+                xComponent += 1;
+            }
             //add a force in that direction
-            rigidbody.AddForce(new Vector3(sign * 10, 0, 0), ForceMode.Impulse);
+            rigidbody.AddForce(new Vector3(xComponent * 10, yComponent * 10, 0), ForceMode.Impulse);
+            //resets timer
             timeLeft = timer;
         }
+        //makes timer count down
+        timeLeft -= Time.deltaTime;
+    }
 
+    void jump()
+    {
         //if you hit space
         if (Input.GetKeyDown(KeyCode.Space) && !inMidair)
         {
-            //add a focre upwards. Magnitude scales on speed
+            //add a force upwards. Magnitude scales on speed
             rigidbody.AddForce(new Vector3(0, speed * 2, 0), ForceMode.Impulse);
             //prevent jumping in midair
             inMidair = true;
         }
-
-        //makes timer count down
-        timeLeft -= Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)

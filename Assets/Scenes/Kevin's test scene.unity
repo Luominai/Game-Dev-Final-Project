@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   timer: 0.5
-  leftHandMode: 1
+  leftHandMode: 0
 --- !u!1 &2070674782
 GameObject:
   m_ObjectHideFlags: 0

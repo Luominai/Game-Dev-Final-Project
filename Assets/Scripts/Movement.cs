@@ -125,7 +125,7 @@ public class Movement : MonoBehaviour
                 xComponent += 1;
             }
             //add a force in that direction
-            rigidbody.AddForce(new Vector3(xComponent * 10, yComponent * 10, 0), ForceMode.Impulse);
+            rigidbody.velocity += (new Vector3(xComponent * 10, yComponent * 10, 0));
             //resets timer
             timeLeft = timer;
         }
@@ -147,7 +147,6 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
         inMidair = false;
     }
 }

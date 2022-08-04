@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public string nextlevel;
+    public string shop;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,9 @@ public class Menu : MonoBehaviour
     public void LevelOne()
     {
         SceneManager.LoadScene(nextlevel);
+    }
+    public void Shop()
+    {
+        SceneManager.LoadScene(shop);
     }
 }

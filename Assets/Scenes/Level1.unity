@@ -5265,7 +5265,6 @@ GameObject:
   - component: {fileID: 1329422882}
   - component: {fileID: 1329422881}
   - component: {fileID: 1329422880}
-  - component: {fileID: 1329422883}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -5324,18 +5323,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1329422883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329422879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33c911a2cd1056428ca002a25f23802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1912783385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5413,7 +5400,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1611346945, guid: b857766d71a0a1445a0af58886760159, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7232704, g: 0.9939727, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5436,8 +5423,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inMidair: 0
-  speed: 3
+  isDashing: 0
+  speed: 4
   dashCD: 0.5
+  dashDuration: 0.5
+  gravity: 2
   leftHandMode: 0
   pressingW: 0
   pressingA: 0
@@ -5456,7 +5446,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1285457}
+  m_Offset: {x: 0.00000023841858, y: 0.038040817}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5467,7 +5457,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.7429086}
+  m_Size: {x: 0.89656544, y: 0.5618988}
   m_EdgeRadius: 0
 --- !u!50 &1912783390
 Rigidbody2D:
@@ -5489,7 +5479,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &2142249564
 GameObject:
   m_ObjectHideFlags: 0

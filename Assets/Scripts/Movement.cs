@@ -9,18 +9,23 @@ public class Movement : MonoBehaviour
     private float xVelocity = 0;
     private float yVelocity = 0;
     private float timeLeft = 0;
+<<<<<<< Updated upstream
     private Rigidbody2D rigidbody;
     private bool inMidair;
+=======
+    private Rigidbody rigidbody;
+    public bool inMidair;
+>>>>>>> Stashed changes
     string axisName = "Horizontal";
 
     public float speed = 3f;
     public float dashCD = .5f;
     public bool leftHandMode = false;
 
-    private bool pressingW;
-    private bool pressingA;
-    private bool pressingS;
-    private bool pressingD;
+    public bool pressingW;
+    public bool pressingA;
+    public bool pressingS;
+    public bool pressingD;
 
     void Start()
     {

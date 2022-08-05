@@ -7,7 +7,7 @@ public class Animation : MonoBehaviour
     private Movement _movement;
    // private GameObject eight;
     private bool jumping;
-
+    private Animator _animator;
    
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,7 @@ public class Animation : MonoBehaviour
         // eight = GameObject.Find("Animaton").transform.GetChild(1).gameObject;
         //eight.SetActive(false);
         jumping = false;
+        _animator = GetComponent<Animator>();
 
     }
 

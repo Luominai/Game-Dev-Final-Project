@@ -8,10 +8,12 @@ public class GroundCheck : MonoBehaviour
     private Collider2D footCollider;
     public bool inMidair;
     private Animator _animator;
+
     void Start()
     {
         _animator = GameObject.Find("Animation").GetComponent<Animator>();
         footCollider = GetComponent<Collider2D>();
+       
     }
 
     // Update is called once per frame

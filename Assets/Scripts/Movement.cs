@@ -173,9 +173,6 @@ public class Movement : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, speed * 2.5f), ForceMode2D.Impulse);
             _animator.SetBool("jumping", true);
         }
-        else
-        {
-            _animator.SetBool("jumping", false);
-        }
+       
     }
 }

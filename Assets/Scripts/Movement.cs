@@ -9,12 +9,12 @@ public class Movement : MonoBehaviour
     private float xVelocity = 0;
     private float yVelocity = 0;
     private float timeLeft = 0;
-    private Rigidbody rigidbody;
+    private Rigidbody2D rigidbody;
     private bool inMidair;
     string axisName = "Horizontal";
 
     public float speed = 3f;
-    public float timer = .5f;
+    public float dashCD = .5f;
     public bool leftHandMode = false;
 
     private bool pressingW;
@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody2D>();
         if (leftHandMode)
         {
             axisName = "HorizontalLeft";
@@ -75,12 +75,12 @@ public class Movement : MonoBehaviour
             //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is right
             if (Mathf.Abs(xVelocity) < speed)
             {
-                rigidbody.velocity = new Vector3(-1 * speed, yVelocity, 0);
+                rigidbody.velocity = new Vector2(-1 * speed, yVelocity);
             }
             else
             //changes direction while keeping velocity if you were previously moving right
             {
-                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity) * -1, yVelocity, 0);
+                rigidbody.velocity = new Vector2(Mathf.Abs(xVelocity) * -1, yVelocity);
             }
         }
 
@@ -89,12 +89,12 @@ public class Movement : MonoBehaviour
             //if you are moving slower than the base, set your velocity to that base speed. Direction of velocity is left
             if (Mathf.Abs(xVelocity) < speed)
             {
-                rigidbody.velocity = new Vector3(speed, yVelocity, 0);
+                rigidbody.velocity = new Vector2(speed, yVelocity);
             }
             else
             //changes direction while keeping velocity if you were previously moving left
             {
-                rigidbody.velocity = new Vector3(Mathf.Abs(xVelocity), yVelocity, 0);
+                rigidbody.velocity = new Vector2(Mathf.Abs(xVelocity), yVelocity);
             }
         }
     }
@@ -125,9 +125,9 @@ public class Movement : MonoBehaviour
                 xComponent += 1;
             }
             //add a force in that direction
-            rigidbody.velocity += (new Vector3(xComponent * 10, yComponent * 10, 0));
+            rigidbody.velocity += (new Vector2(xComponent * 5, yComponent * 5));
             //resets timer
-            timeLeft = timer;
+            timeLeft = dashCD;
         }
         //makes timer count down
         timeLeft -= Time.deltaTime;
@@ -139,14 +139,18 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !inMidair)
         {
             //add a force upwards. Magnitude scales on speed
-            rigidbody.AddForce(new Vector3(0, speed * 2, 0), ForceMode.Impulse);
+            rigidbody.AddForce(new Vector2(0, speed * 2), ForceMode2D.Impulse);
             //prevent jumping in midair
             inMidair = true;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        inMidair = false;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            inMidair = false;
+        }
+        print(collision.gameObject.name + " has tag " + collision.gameObject.tag);
     }
 }

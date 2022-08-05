@@ -8,15 +8,19 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     private float xVelocity = 0;
     private float yVelocity = 0;
-    private float timeLeft = 0;
+    private float _CDTimer = 0;
+    private float _dashTimer = 0;
 
     private Rigidbody2D rigidbody;
     public bool inMidair;
+    public bool isDashing;
 
     string axisName = "Horizontal";
 
     public float speed = 3f;
     public float dashCD = .5f;
+    public float dashDuration = .5f;
+    public float gravity = 2f;
     public bool leftHandMode = false;
 
     public bool pressingW;
@@ -38,6 +42,7 @@ public class Movement : MonoBehaviour
     {
         xVelocity = rigidbody.velocity.x;
         yVelocity = rigidbody.velocity.y;
+
         if (leftHandMode)
         {
             pressingW = Input.GetKey(KeyCode.I);
@@ -99,6 +104,11 @@ public class Movement : MonoBehaviour
                 rigidbody.velocity = new Vector2(Mathf.Abs(xVelocity), yVelocity);
             }
         }
+
+        if (input == 0 && !isDashing)
+        {
+            rigidbody.velocity = new Vector2(0, yVelocity);
+        }
     }
 
     void dash()
@@ -106,9 +116,16 @@ public class Movement : MonoBehaviour
         float xComponent = 0;
         float yComponent = 0;
 
-        //if you left click and your boost is off cooldown
-        if (Input.GetKeyDown(KeyCode.Mouse0) && timeLeft <= 0)
+        if (_dashTimer <= 0)
         {
+            isDashing = false;
+            rigidbody.gravityScale = gravity;
+        }
+
+        //if you left click and your boost is off cooldown
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _CDTimer <= 0)
+        {
+            isDashing = true;
             //determine which direction to add the force
             if (pressingW)
             {
@@ -128,11 +145,18 @@ public class Movement : MonoBehaviour
             }
             //add a force in that direction
             rigidbody.velocity += (new Vector2(xComponent * 5, yComponent * 5));
-            //resets timer
-            timeLeft = dashCD;
+            //puts the dash on CD
+            _CDTimer = dashCD;
+            //starts counting the dash duration
+            _dashTimer = dashDuration;
+            rigidbody.gravityScale = 0;
         }
-        //makes timer count down
-        timeLeft -= Time.deltaTime;
+        //makes CD count down
+        _CDTimer -= Time.deltaTime;
+        //makes dash duration count down
+        _dashTimer -= Time.deltaTime;
+
+
     }
 
     void jump()

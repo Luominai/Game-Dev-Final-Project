@@ -13,8 +13,9 @@ public class Animation : MonoBehaviour
     void Start()
     {
         _movement = GameObject.Find("Slime").GetComponent<Movement>();
-       // eight = GameObject.Find("Animaton").transform.GetChild(1).gameObject;
+        // eight = GameObject.Find("Animaton").transform.GetChild(1).gameObject;
         //eight.SetActive(false);
+        jumping = false;
 
     }
 

@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     public float speed = 3f;
     public float dashCD = .5f;
-    public float dashDuration = .5f;
+    public float dashDuration = .2f;
     public float gravity = 2f;
     public bool leftHandMode = false;
 

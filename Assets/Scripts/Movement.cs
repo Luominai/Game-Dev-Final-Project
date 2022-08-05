@@ -148,8 +148,8 @@ public class Movement : MonoBehaviour
             {
                 xComponent += 1;
             }
-            //add a force in that direction
-            rigidbody.velocity += (new Vector2(xComponent * 5, yComponent * 5));
+            //create a vector in that direction
+            rigidbody.velocity = (new Vector2(xComponent * speed * 3, yComponent * speed * 3));
             //puts the dash on CD
             _CDTimer = dashCD;
             //starts counting the dash duration
@@ -170,7 +170,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !inMidair)
         {
             //add a force upwards. Magnitude scales on speed
-            rigidbody.AddForce(new Vector2(0, speed * 2), ForceMode2D.Impulse);
+            rigidbody.AddForce(new Vector2(0, speed * 2.5f), ForceMode2D.Impulse);
             //prevent jumping in midair
             inMidair = true;
             _animator.SetBool("jumping", true);

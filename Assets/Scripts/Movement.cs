@@ -47,6 +47,7 @@ public class Movement : MonoBehaviour
     {
         xVelocity = rigidbody.velocity.x;
         yVelocity = rigidbody.velocity.y;
+        inMidair = transform.Find("GroundCheck").GetComponent<GroundCheck>().inMidair;
 
         if (leftHandMode)
         {
@@ -161,7 +162,6 @@ public class Movement : MonoBehaviour
         //makes dash duration count down
         _dashTimer -= Time.deltaTime;
 
-
     }
 
     void jump()
@@ -171,19 +171,11 @@ public class Movement : MonoBehaviour
         {
             //add a force upwards. Magnitude scales on speed
             rigidbody.AddForce(new Vector2(0, speed * 2.5f), ForceMode2D.Impulse);
-            //prevent jumping in midair
-            inMidair = true;
             _animator.SetBool("jumping", true);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        else
         {
-            inMidair = false;
             _animator.SetBool("jumping", false);
         }
-        print(collision.gameObject.name + " has tag " + collision.gameObject.tag);
     }
 }

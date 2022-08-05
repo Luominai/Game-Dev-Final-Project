@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     private float yVelocity = 0;
     private float _CDTimer = 0;
     private float _dashTimer = 0;
+    
 
     private Rigidbody2D rigidbody;
     public bool inMidair;
@@ -28,6 +29,8 @@ public class Movement : MonoBehaviour
     public bool pressingS;
     public bool pressingD;
 
+    private Animator _animator;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -35,6 +38,8 @@ public class Movement : MonoBehaviour
         {
             axisName = "HorizontalLeft";
         }
+
+        _animator = GameObject.Find("Animation").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -168,6 +173,7 @@ public class Movement : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, speed * 2), ForceMode2D.Impulse);
             //prevent jumping in midair
             inMidair = true;
+            _animator.SetBool("jumping", true);
         }
     }
 
@@ -176,6 +182,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             inMidair = false;
+            _animator.SetBool("jumping", false);
         }
         print(collision.gameObject.name + " has tag " + collision.gameObject.tag);
     }

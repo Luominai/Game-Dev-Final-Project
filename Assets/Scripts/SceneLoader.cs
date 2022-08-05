@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Menu : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     public string nextlevel;
     public string shop;
+    public string credits;
+    public string pause;
+    public string settings;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LevelOne()
@@ -27,5 +30,17 @@ public class Menu : MonoBehaviour
     public void Shop()
     {
         SceneManager.LoadScene(shop);
+    }
+    public void Credits()
+    {
+        SceneManager.LoadScene(credits);
+    }
+    public void ScenePause()
+    {
+        SceneManager.LoadScene(pause);
+    }
+    public void Settings()
+    {
+        SceneManager.LoadScene(settings);
     }
 }

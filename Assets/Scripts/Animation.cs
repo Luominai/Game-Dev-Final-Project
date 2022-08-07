@@ -12,13 +12,13 @@ public class Animation : MonoBehaviour
     {
         _movement = GameObject.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        isJumping();
+        isWalking();
     }
     private void isJumping()
     {
@@ -31,5 +31,17 @@ public class Animation : MonoBehaviour
             _animator.SetBool("jumping", false);
         }
     }
+    private void isWalking()
+    {
+        if(_movement.pressingD)
+        {
+            _animator.SetBool("walking right", true);
+        }
+        else
+        {
+            _animator.SetBool("walking right", false) ;
+        }
+    }
+
 
 }

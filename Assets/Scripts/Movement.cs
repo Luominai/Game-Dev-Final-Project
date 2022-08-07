@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
 
     public float speed = 3f;
     public float dashCD = .5f;
+    public float dashDistance = 1f;
     public float dashDuration = .2f;
     public float gravity = 2f;
     public bool leftHandMode = false;
@@ -72,7 +73,6 @@ public class Movement : MonoBehaviour
     void horizontalMovement()
     {
         var axis = Input.GetAxis(axisName);
-
         int input = 0;
         if (pressingA && axis < 0)
         {
@@ -150,11 +150,12 @@ public class Movement : MonoBehaviour
                 xComponent += 1;
             }
             //create a vector in that direction
-            rigidbody.velocity = (new Vector2(xComponent * speed * 3, yComponent * speed * 3));
+            rigidbody.velocity = (new Vector2(xComponent * (dashDistance / dashDuration) * 3, yComponent * speed * 3));
             //puts the dash on CD
             _CDTimer = dashCD;
             //starts counting the dash duration
             _dashTimer = dashDuration;
+            //negates gravity during the duration of the dash
             rigidbody.gravityScale = 0;
         }
         //makes CD count down

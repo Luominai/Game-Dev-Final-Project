@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rigidbody;
     public bool inMidair;
     public bool isDashing;
+    public bool dashEnded;
 
     string axisName = "Horizontal";
 
@@ -73,19 +74,12 @@ public class Movement : MonoBehaviour
 
     void horizontalMovement()
     {
-
-        if (!isDashing)
+        //set velocity to 0 once when your dash ends
+        if (dashEnded)
         {
-            if (Mathf.Abs(xVelocity) > speed)
-            {
-                xVelocity = Mathf.Abs(xVelocity) / xVelocity * speed;
-            }
-            /*
-            if (yVelocity > speed)
-            {
-                yVelocity = speed;
-            }
-            */
+            xVelocity = 0;
+            yVelocity = 0;
+            dashEnded = false;
         }
         var axis = Input.GetAxis(axisName);
         int input = 0;
@@ -162,6 +156,11 @@ public class Movement : MonoBehaviour
 
         if (_dashTimer <= 0)
         {
+            //arbitrary interval
+            if (_dashTimer >= -.1)
+            {
+                dashEnded = true;
+            }
             isDashing = false;
             rigidbody.gravityScale = 2;
         }

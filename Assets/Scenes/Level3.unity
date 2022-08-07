@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 861631291}
   - component: {fileID: 861631292}
   m_Layer: 0
-  m_Name: DeathCollider
+  m_Name: DeathCollider (Insert Code for this)
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12423,7 +12423,7 @@ GameObject:
   - component: {fileID: 1883344051}
   - component: {fileID: 1883344052}
   m_Layer: 0
-  m_Name: WinCollider
+  m_Name: WinCollider (Insert Code for this)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

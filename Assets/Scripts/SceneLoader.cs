@@ -11,6 +11,7 @@ public class SceneLoader : MonoBehaviour
     public string credits;
     public string pause;
     public string settings;
+    public string menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,4 +44,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(settings);
     }
+    public void Menu()
+    {
+        SceneManager.LoadScene(menu);
+    }
+
 }

@@ -5,17 +5,12 @@ using UnityEngine;
 public class Animation : MonoBehaviour
 {
     private Movement _movement;
-   // private GameObject eight;
-    private bool jumping;
     private Animator _animator;
-   
+
     // Start is called before the first frame update
     void Start()
     {
-        _movement = GameObject.Find("Slime").GetComponent<Movement>();
-        // eight = GameObject.Find("Animaton").transform.GetChild(1).gameObject;
-        //eight.SetActive(false);
-        jumping = false;
+        _movement = GameObject.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
 
     }
@@ -23,19 +18,18 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-   private bool isjumping(bool jumping)
+    private void isJumping()
     {
-        if ( _movement.inMidair == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumping = true;
-            return jumping;
-           // eight.SetActive(true);
+            _animator.SetBool("jumping", true);
         }
         else
         {
-            return false;
+            _animator.SetBool("jumping", false);
         }
     }
+
 }

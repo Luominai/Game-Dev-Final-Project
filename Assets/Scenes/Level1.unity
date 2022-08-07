@@ -6181,12 +6181,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inMidair: 0
   isDashing: 0
-  speed: 3
+  dashEnded: 0
+  speed: 5
   dashCD: 0.5
   dashDistance: 1
   dashDuration: 0.2
   gravity: 1
-  jumpHeight: 5
+  jumpHeight: 10
   leftHandMode: 0
   pressingW: 0
   pressingA: 0

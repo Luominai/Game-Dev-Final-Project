@@ -2805,26 +2805,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 19, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 20, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 63, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -3719,9 +3699,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 461af46ff36e24648b15c45fd9cd0c8b, type: 2}
   - m_RefCount: 17
     m_Data: {fileID: 11400000, guid: 26060872539d967488cebd038651df8b, type: 2}
-  - m_RefCount: 13
+  - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: da1bb5b6596df464f8c199467986da32, type: 2}
-  - m_RefCount: 13
+  - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: def4a2f4565bfb646b62914bba465062, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -3738,14 +3718,14 @@ Tilemap:
     m_Data: {fileID: 1256125419, guid: d21cb298edd729849a081c6bcbcc208e, type: 3}
   - m_RefCount: 17
     m_Data: {fileID: -1594883551, guid: d21cb298edd729849a081c6bcbcc208e, type: 3}
-  - m_RefCount: 13
+  - m_RefCount: 12
     m_Data: {fileID: 1628360363, guid: d21cb298edd729849a081c6bcbcc208e, type: 3}
-  - m_RefCount: 13
+  - m_RefCount: 12
     m_Data: {fileID: -1939868649, guid: d21cb298edd729849a081c6bcbcc208e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 343
+  - m_RefCount: 341
     m_Data:
       e00: 1
       e01: 0
@@ -3764,7 +3744,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 343
+  - m_RefCount: 341
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -4024,20 +4004,6 @@ CompositeCollider2D:
         Y: 40000000
       - X: 243750000
         Y: 40000000
-    - - X: 210000000
-        Y: 34375000
-      - X: 210000000
-        Y: 40000000
-      - X: 190000000
-        Y: 40000000
-      - X: 190000000
-        Y: 35000000
-      - X: 192500000
-        Y: 30625000
-      - X: 196250000
-        Y: 30000000
-      - X: 203750000
-        Y: 30000000
     - - X: 410000000
         Y: 24375000
       - X: 410000000
@@ -4201,13 +4167,6 @@ CompositeCollider2D:
       - {x: 23.000004, y: 4.4999943}
       - {x: 23.250013, y: 4.0624976}
       - {x: 23.625002, y: 4}
-    - - {x: 20.374992, y: 3}
-      - {x: 21, y: 3.4375136}
-      - {x: 20.999971, y: 4}
-      - {x: 19, y: 3.999971}
-      - {x: 19.000004, y: 3.4999945}
-      - {x: 19.250013, y: 3.0624979}
-      - {x: 19.625002, y: 3}
     - - {x: 40.374996, y: 2}
       - {x: 41, y: 2.4375138}
       - {x: 40.999973, y: 3}
@@ -4361,7 +4320,7 @@ GameObject:
   - component: {fileID: 1250863866}
   - component: {fileID: 1250863865}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: Tilemap (Insert Code for this)
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5724,7 +5683,7 @@ GameObject:
   - component: {fileID: 1562789150}
   - component: {fileID: 1562789151}
   m_Layer: 0
-  m_Name: WinCollider
+  m_Name: WinCollider (Insert Code for this)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5965,7 +5924,7 @@ GameObject:
   - component: {fileID: 1840667434}
   - component: {fileID: 1840667435}
   m_Layer: 0
-  m_Name: DeathCollider
+  m_Name: DeathCollider (Insert Code for this)
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

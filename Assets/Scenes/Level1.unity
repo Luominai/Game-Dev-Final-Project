@@ -5512,6 +5512,7 @@ MonoBehaviour:
   isDashing: 0
   speed: 3
   dashCD: 0.5
+  dashDistance: 1
   dashDuration: 0.2
   gravity: 2
   leftHandMode: 0

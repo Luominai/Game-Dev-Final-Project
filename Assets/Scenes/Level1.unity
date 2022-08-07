@@ -5512,8 +5512,10 @@ MonoBehaviour:
   isDashing: 0
   speed: 3
   dashCD: 0.5
+  dashDistance: 1
   dashDuration: 0.2
-  gravity: 2
+  gravity: 1
+  jumpHeight: 5
   leftHandMode: 0
   pressingW: 0
   pressingA: 0
@@ -5560,7 +5562,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: b84516be483cb3b499b566139ac01d06, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1

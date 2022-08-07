@@ -18,11 +18,12 @@ public class Movement : MonoBehaviour
 
     string axisName = "Horizontal";
 
-    public float speed = 3f;
-    public float dashCD = .5f;
-    public float dashDistance = 1f;
-    public float dashDuration = .2f;
-    public float gravity = 2f;
+    public float speed;
+    public float dashCD;
+    public float dashDistance;
+    public float dashDuration;
+    public float gravity;
+    public float jumpHeight;
     public bool leftHandMode = false;
 
     public bool pressingW;
@@ -72,6 +73,20 @@ public class Movement : MonoBehaviour
 
     void horizontalMovement()
     {
+
+        if (!isDashing)
+        {
+            if (Mathf.Abs(xVelocity) > speed)
+            {
+                xVelocity = Mathf.Abs(xVelocity) / xVelocity * speed;
+            }
+            /*
+            if (yVelocity > speed)
+            {
+                yVelocity = speed;
+            }
+            */
+        }
         var axis = Input.GetAxis(axisName);
         int input = 0;
         if (pressingA && axis < 0)
@@ -90,7 +105,7 @@ public class Movement : MonoBehaviour
             {
                 rigidbody.velocity = new Vector2(-1 * speed, yVelocity);
             }
-            else
+            else if (!isDashing)
             //changes direction while keeping velocity if you were previously moving right
             {
                 rigidbody.velocity = new Vector2(Mathf.Abs(xVelocity) * -1, yVelocity);
@@ -104,7 +119,7 @@ public class Movement : MonoBehaviour
             {
                 rigidbody.velocity = new Vector2(speed, yVelocity);
             }
-            else
+            else if (!isDashing)
             //changes direction while keeping velocity if you were previously moving left
             {
                 rigidbody.velocity = new Vector2(Mathf.Abs(xVelocity), yVelocity);
@@ -122,35 +137,41 @@ public class Movement : MonoBehaviour
         float xComponent = 0;
         float yComponent = 0;
 
+        //determine which direction to add the force
+        if (pressingW)
+        {
+            yComponent += 1;
+        }
+        if (pressingA)
+        {
+            xComponent += -1;
+        }
+        if (pressingS)
+        {
+            yComponent += -1;
+        }
+        if (pressingD)
+        {
+            xComponent += 1;
+        }
+
+        if (xComponent == 0 && yComponent == 0)
+        {
+            return;
+        }
+
         if (_dashTimer <= 0)
         {
             isDashing = false;
-            rigidbody.gravityScale = gravity;
+            rigidbody.gravityScale = 2;
         }
 
         //if you left click and your boost is off cooldown
         if (Input.GetKeyDown(KeyCode.Mouse0) && _CDTimer <= 0)
         {
             isDashing = true;
-            //determine which direction to add the force
-            if (pressingW)
-            {
-                yComponent += 1;
-            }
-            if (pressingA)
-            {
-                xComponent += -1;
-            }
-            if (pressingS)
-            {
-                yComponent += -1;
-            }
-            if (pressingD)
-            {
-                xComponent += 1;
-            }
             //create a vector in that direction
-            rigidbody.velocity = (new Vector2(xComponent * (dashDistance / dashDuration) * 3, yComponent * speed * 3));
+            rigidbody.velocity = (new Vector2(xComponent * (dashDistance / dashDuration) * 3, yComponent * (dashDistance / dashDuration) * 3));
             //puts the dash on CD
             _CDTimer = dashCD;
             //starts counting the dash duration
@@ -171,9 +192,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !inMidair)
         {
             //add a force upwards. Magnitude scales on speed
-            rigidbody.AddForce(new Vector2(0, speed * 2.5f), ForceMode2D.Impulse);
+            rigidbody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
             _animator.SetBool("jumping", true);
         }
        
     }
+    /*
+    private void FixedUpdate()
+    {
+        rigidbody.AddForce(Vector2.down * gravity);
+    }
+    */
 }

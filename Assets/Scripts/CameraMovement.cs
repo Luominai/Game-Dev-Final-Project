@@ -28,7 +28,7 @@ public class CameraMovement : MonoBehaviour
         cameraY = player.GetComponent<Transform>().position.y;
 
         cameraX = Mathf.Clamp(cameraX, minX + halfWidth, maxX - halfWidth);
-        cameraY = Mathf.Clamp(cameraX, minY + halfHeight, maxY - halfHeight);
+        cameraY = Mathf.Clamp(cameraY, minY + halfHeight, maxY - halfHeight);
 
         camera.GetComponent<Transform>().position = new Vector3(cameraX, cameraY, -10);
     }

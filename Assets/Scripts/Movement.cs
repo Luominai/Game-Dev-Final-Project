@@ -13,9 +13,11 @@ public class Movement : MonoBehaviour
     
 
     private Rigidbody2D rigidbody;
+    public GameObject currentCheckpoint = null;
     public bool inMidair;
     public bool isDashing;
     public bool dashEnded;
+    private bool isCurrentlyDying = false;
 
     string axisName = "Horizontal";
 
@@ -195,6 +197,28 @@ public class Movement : MonoBehaviour
             _animator.SetBool("jumping", true);
         }
        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Death") && !isCurrentlyDying)
+        {
+            //begin the dying routine
+            isCurrentlyDying = true;
+            //play the death animation
+            //teleport the player to the last checkpoint
+            gameObject.transform.position = currentCheckpoint.transform.GetChild(0).position;
+            isCurrentlyDying = false;
+        }
+        if (collision.CompareTag("Checkpoint"))
+        {
+
+            if (currentCheckpoint == null || collision.transform.GetSiblingIndex() > currentCheckpoint.transform.GetSiblingIndex())
+            {
+                print("Set checkpoint!");
+                currentCheckpoint = collision.gameObject;
+            }
+        }
     }
     /*
     private void FixedUpdate()

@@ -18,6 +18,10 @@ public class Animation : MonoBehaviour
     void Update()
     {
         isJumping();
+        if (_movement.pressingD && Input.GetKeyDown(KeyCode.Space))
+        {
+            isJumping();
+        }
         isWalking();
     }
     private void isJumping()
@@ -42,6 +46,7 @@ public class Animation : MonoBehaviour
             _animator.SetBool("walking right", false) ;
         }
     }
+
 
 
 }

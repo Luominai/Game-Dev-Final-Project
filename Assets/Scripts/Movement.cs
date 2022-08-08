@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     private float yVelocity = 0;
     private float _CDTimer = 0;
     private float _dashTimer = 0;
-    
 
     private Rigidbody2D rigidbody;
     public bool inMidair;
@@ -27,6 +26,7 @@ public class Movement : MonoBehaviour
     public float jumpHeight;
     public float airDashLimit;
     public float airDashesLeft;
+    public PhysicsMaterial2D material;
     public bool leftHandMode = false;
 
     public bool pressingW;
@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
         }
         horizontalMovement();
         dash();
+        bounce();
         jump();
         //print(movingLeft + ", " + movingRight);
         //print(Input.GetAxis("Horizontal"));
@@ -200,10 +201,16 @@ public class Movement : MonoBehaviour
         }
        
     }
-    /*
-    private void FixedUpdate()
+
+    void bounce()
     {
-        rigidbody.AddForce(Vector2.down * gravity);
+        if(Input.GetKey(KeyCode.Mouse1))
+        {
+            rigidbody.sharedMaterial.bounciness = 1;
+        } else
+        {
+            rigidbody.sharedMaterial.bounciness = 0;
+        }
+        rigidbody.sharedMaterial = material;
     }
-    */
 }

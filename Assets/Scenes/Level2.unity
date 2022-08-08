@@ -10910,6 +10910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babc44e05625c4a44aa8fa9e3cf8201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCheckpoint: {fileID: 0}
   inMidair: 0
   isDashing: 0
   dashEnded: 0
@@ -10921,7 +10922,7 @@ MonoBehaviour:
   jumpHeight: 10
   airDashLimit: 0
   airDashesLeft: 0
-  material: {fileID: 0}
+  material: {fileID: 6200000, guid: b84516be483cb3b499b566139ac01d06, type: 2}
   leftHandMode: 0
   pressingW: 0
   pressingA: 0

@@ -19,7 +19,7 @@ public class GroundCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(inMidair);
+        //print(inMidair);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

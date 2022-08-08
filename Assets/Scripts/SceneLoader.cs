@@ -9,13 +9,14 @@ public class SceneLoader : MonoBehaviour
     public string nextlevel;
     public string shop;
     public string credits;
-    public string pause;
     public string settings;
     public string menu;
+    private Canvas _canvas;
     // Start is called before the first frame update
     void Start()
     {
-
+        _canvas = GameObject.Find("Pause").GetComponent<Canvas>();
+        _canvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void ScenePause()
     {
-        SceneManager.LoadScene(pause);
+        _canvas.enabled = true;
     }
     public void Settings()
     {

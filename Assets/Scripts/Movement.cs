@@ -10,14 +10,11 @@ public class Movement : MonoBehaviour
     private float yVelocity = 0;
     private float _CDTimer = 0;
     private float _dashTimer = 0;
-    
 
     private Rigidbody2D rigidbody;
-    public GameObject currentCheckpoint = null;
     public bool inMidair;
     public bool isDashing;
     public bool dashEnded;
-    private bool isCurrentlyDying = false;
 
     string axisName = "Horizontal";
 
@@ -27,6 +24,9 @@ public class Movement : MonoBehaviour
     public float dashDuration;
     public float gravity;
     public float jumpHeight;
+    public float airDashLimit;
+    public float airDashesLeft;
+    public PhysicsMaterial2D material;
     public bool leftHandMode = false;
 
     public bool pressingW;
@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour
         }
 
         _animator = GameObject.Find("Animation").GetComponent<Animator>();
+        airDashesLeft = airDashLimit;
     }
 
     // Update is called once per frame
@@ -69,6 +70,7 @@ public class Movement : MonoBehaviour
         }
         horizontalMovement();
         dash();
+        bounce();
         jump();
         //print(movingLeft + ", " + movingRight);
         //print(Input.GetAxis("Horizontal"));
@@ -133,6 +135,11 @@ public class Movement : MonoBehaviour
         float xComponent = 0;
         float yComponent = 0;
 
+        if (!inMidair && !isDashing)
+        {
+            airDashesLeft = airDashLimit;
+        }
+
         //determine which direction to add the force
         if (pressingW)
         {
@@ -151,11 +158,6 @@ public class Movement : MonoBehaviour
             xComponent += 1;
         }
 
-        if (xComponent == 0 && yComponent == 0)
-        {
-            return;
-        }
-
         if (_dashTimer <= 0)
         {
             //arbitrary interval
@@ -168,8 +170,9 @@ public class Movement : MonoBehaviour
         }
 
         //if you left click and your boost is off cooldown
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _CDTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _CDTimer <= 0 && !(xComponent == 0 && yComponent == 0) && airDashesLeft > 0)
         {
+            airDashesLeft--;
             isDashing = true;
             //create a vector in that direction
             rigidbody.velocity = (new Vector2(xComponent * (dashDistance / dashDuration) * 3, yComponent * (dashDistance / dashDuration) * 3));
@@ -199,31 +202,15 @@ public class Movement : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void bounce()
     {
-        if (collision.CompareTag("Death") && !isCurrentlyDying)
+        if(Input.GetKey(KeyCode.Mouse1))
         {
-            //begin the dying routine
-            isCurrentlyDying = true;
-            //play the death animation
-            //teleport the player to the last checkpoint
-            gameObject.transform.position = currentCheckpoint.transform.GetChild(0).position;
-            isCurrentlyDying = false;
-        }
-        if (collision.CompareTag("Checkpoint"))
+            rigidbody.sharedMaterial.bounciness = 1;
+        } else
         {
-
-            if (currentCheckpoint == null || collision.transform.GetSiblingIndex() > currentCheckpoint.transform.GetSiblingIndex())
-            {
-                print("Set checkpoint!");
-                currentCheckpoint = collision.gameObject;
-            }
+            rigidbody.sharedMaterial.bounciness = 0;
         }
+        rigidbody.sharedMaterial = material;
     }
-    /*
-    private void FixedUpdate()
-    {
-        rigidbody.AddForce(Vector2.down * gravity);
-    }
-    */
 }

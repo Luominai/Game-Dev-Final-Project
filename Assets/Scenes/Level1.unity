@@ -5620,7 +5620,7 @@ MonoBehaviour:
   camera: {fileID: 1043700558}
   minX: 0
   minY: 0
-  maxX: 130
+  maxX: 133
   maxY: 20
   player: {fileID: 1912783385}
 --- !u!4 &1354671164
@@ -6493,11 +6493,13 @@ MonoBehaviour:
   isDashing: 0
   dashEnded: 0
   speed: 5
-  dashCD: 0.5
+  dashCD: 0
   dashDistance: 1
   dashDuration: 0.2
   gravity: 1
   jumpHeight: 10
+  airDashLimit: 2
+  airDashesLeft: 0
   leftHandMode: 0
   pressingW: 0
   pressingA: 0

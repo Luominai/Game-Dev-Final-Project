@@ -281,14 +281,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257363008}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -705.7445, y: -448.60327, z: 8.463776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1487565601}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1895927133}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302385899
 GameObject:
@@ -7191,6 +7191,7 @@ Transform:
   - {fileID: 2142249566}
   - {fileID: 1329422882}
   - {fileID: 1527873264}
+  - {fileID: 257363010}
   - {fileID: 1903733800}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -7240,7 +7241,7 @@ Transform:
   m_Children:
   - {fileID: 1250863864}
   m_Father: {fileID: 1895927133}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1903733801
 TilemapCollider2D:
@@ -7396,6 +7397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babc44e05625c4a44aa8fa9e3cf8201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCheckpoint: {fileID: 0}
   inMidair: 0
   isDashing: 0
   dashEnded: 0

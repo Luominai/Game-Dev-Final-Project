@@ -41,7 +41,12 @@ public class Animation : MonoBehaviour
     {
         if (_movement.pressingD)
         {
-            _spriterenderer.sprite = _sprite;
+            _animator.SetBool("walking right", true);
+
+        }
+        else
+        {
+            _animator.SetBool("walking right", false);
         }
     }
 

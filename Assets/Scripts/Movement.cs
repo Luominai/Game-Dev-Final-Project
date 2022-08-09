@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string nextLevelName;
+    
     private float xVelocity = 0;
     private float yVelocity = 0;
     private float _CDTimer = 0;
@@ -234,6 +237,11 @@ public class Movement : MonoBehaviour
                 print("Set checkpoint!");
                 currentCheckpoint = collision.gameObject;
             }
+        }
+
+        if (collision.CompareTag("Goal"))
+        {
+            SceneManager.LoadScene(nextLevelName);
         }
     }
 }

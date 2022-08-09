@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 861631291}
   - component: {fileID: 861631292}
   m_Layer: 0
-  m_Name: DeathCollider (Insert Code for this)
+  m_Name: DeathCollider
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13306,6 +13306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babc44e05625c4a44aa8fa9e3cf8201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevelName: 
   currentCheckpoint: {fileID: 0}
   inMidair: 0
   isDashing: 0

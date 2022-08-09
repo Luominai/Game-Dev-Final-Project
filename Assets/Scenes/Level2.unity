@@ -1875,7 +1875,7 @@ GameObject:
   - component: {fileID: 800852103}
   - component: {fileID: 800852105}
   m_Layer: 0
-  m_Name: Tilemap (Insert Code for this)
+  m_Name: Tilemap
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9879,7 +9879,7 @@ GameObject:
   - component: {fileID: 1901620547}
   - component: {fileID: 1901620548}
   m_Layer: 0
-  m_Name: DeathCollider (Insert Code for this)
+  m_Name: 'DeathCollider '
   m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

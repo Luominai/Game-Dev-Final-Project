@@ -9,7 +9,6 @@ public class SceneLoader : MonoBehaviour
     public string nextlevel;
     public string shop;
     public string credits;
-    public string settings;
     public string menu;
     private Canvas _pause;
     private Canvas _scene;
@@ -48,11 +47,6 @@ public class SceneLoader : MonoBehaviour
         _pause.enabled = true;
         _scene.enabled = false;
         _game.SetActive(false);
-    }
-
-    public void Settings()
-    {
-        SceneManager.LoadScene(settings);
     }
     public void Menu()
     {

@@ -570,8 +570,8 @@ MonoBehaviour:
   nextlevel: Level1
   shop: Shop
   credits: Credits
-  pause: Pause
   settings: Settings
+  menu: 
 --- !u!1 &665757667
 GameObject:
   m_ObjectHideFlags: 0

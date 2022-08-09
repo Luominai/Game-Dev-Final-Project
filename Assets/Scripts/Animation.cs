@@ -6,16 +6,13 @@ public class Animation : MonoBehaviour
 {
     private Movement _movement;
     private Animator _animator;
-    private SpriteRenderer _spriterenderer;
-    public Sprite _sprite;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _movement = GameObject.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
-        _spriterenderer = GameObject.Find("slime_8").GetComponent<SpriteRenderer>();
-
       
     }
 
@@ -23,7 +20,8 @@ public class Animation : MonoBehaviour
     void Update()
     {
         isJumping();
-        isWalking();
+        isWalkingRight();
+        isWalkingLeft();
     }
     private void isJumping()
     {
@@ -37,7 +35,7 @@ public class Animation : MonoBehaviour
 
         }
     }
-    private void isWalking()
+    private void isWalkingRight()
     {
         if (_movement.pressingD)
         {
@@ -47,6 +45,17 @@ public class Animation : MonoBehaviour
         else
         {
             _animator.SetBool("walking right", false);
+        }
+    }
+    private void isWalkingLeft()
+    {
+        if(_movement.pressingA)
+        {
+            _animator.SetBool("walking left", true);
+        }
+        else
+        {
+            _animator.SetBool("walking left", false);
         }
     }
 

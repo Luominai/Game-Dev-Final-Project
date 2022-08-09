@@ -6541,7 +6541,7 @@ GameObject:
   - component: {fileID: 1562789150}
   - component: {fileID: 1562789151}
   m_Layer: 0
-  m_Name: WinCollider (Insert Code for this)
+  m_Name: WinCollider
   m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

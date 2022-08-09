@@ -13,6 +13,8 @@ public class SceneLoader : MonoBehaviour
     private Canvas _pause;
     private Canvas _scene;
     private GameObject _game;
+    private Canvas _settings;
+    private Canvas _menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class SceneLoader : MonoBehaviour
         _scene.enabled = true;
         _game = GameObject.Find("Game");
         _game.SetActive(true);
+        _settings = GameObject.Find("Settings").GetComponent<Canvas>();
+        _menu = GameObject.Find("Menu").GetComponent<Canvas>();
     }
 
     // Update is called once per frame
@@ -57,6 +61,11 @@ public class SceneLoader : MonoBehaviour
         _scene.enabled = true;
         _pause.enabled = false;
         _game.SetActive(true);
+    }
+    public void Settings()
+    {
+        _menu.enabled = false;
+        _settings.enabled = true;
     }
 
 }

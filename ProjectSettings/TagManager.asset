@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Death
   - Checkpoint
+  - Goal
   layers:
   - Default
   - TransparentFX

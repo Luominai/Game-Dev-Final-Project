@@ -6541,7 +6541,7 @@ GameObject:
   - component: {fileID: 1562789150}
   - component: {fileID: 1562789151}
   m_Layer: 0
-  m_Name: WinCollider (Insert Code for this)
+  m_Name: WinCollider
   m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8255,7 +8255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babc44e05625c4a44aa8fa9e3cf8201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: 
+  nextLevelName: Level2
   currentCheckpoint: {fileID: 0}
   inMidair: 0
   isDashing: 0

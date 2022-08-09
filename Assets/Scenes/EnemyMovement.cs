@@ -7,17 +7,24 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Color horizontalRayColor = Color.green;
     private Color verticalRayColor = Color.green;
+    private Color backRayColor = Color.green;
     private Vector3 direction;
     public float speed;
     public float horizontalRayDistance;
     public float verticalRayDistance;
+    public float backRayDistance;
     public float gravity;
+    public bool startLeft;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.gravityScale = gravity;
         direction = Vector3.right;
+        if (startLeft)
+        {
+            changeDirection();
+        }
     }
 
     // Update is called once per frame
@@ -25,7 +32,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.DrawRay(transform.position, direction * horizontalRayDistance, horizontalRayColor);
         Debug.DrawRay(transform.position + direction * .5f, Vector3.down * verticalRayDistance, verticalRayColor);
+        Debug.DrawRay(transform.position - direction * .4f, Vector3.down * backRayDistance, backRayColor);
+        Debug.DrawRay(transform.position, Vector3.down * backRayDistance, backRayColor);
         horizontalMovement();
+        drop();
     }
 
     void horizontalMovement()
@@ -61,12 +71,44 @@ public class EnemyMovement : MonoBehaviour
             string[] layer = { "Ground" };
             if (ray.collider.CompareTag("Ground"))
             {
-                verticalRayColor = Color.green;
+                verticalRayColor = Color.red;
                 return false;
             }
         }
-        verticalRayColor = Color.red;
+        verticalRayColor = Color.green;
         return true;
+    }
+
+    bool groundBehind()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position - direction * .4f, Vector3.down, backRayDistance, 3);
+        if (ray.collider != null)
+        {
+            string[] layer = { "Ground" };
+            if (ray.collider.CompareTag("Ground"))
+            {
+                backRayColor = Color.green;
+                return true;
+            }
+        }
+        backRayColor = Color.red;
+        return false;
+    }
+
+    bool groundBelow()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector3.down, backRayDistance, 3);
+        if (ray.collider != null)
+        {
+            string[] layer = { "Ground" };
+            if (ray.collider.CompareTag("Ground"))
+            {
+                backRayColor = Color.green;
+                return true;
+            }
+        }
+        backRayColor = Color.red;
+        return false;
     }
 
     void turnAround()
@@ -74,7 +116,6 @@ public class EnemyMovement : MonoBehaviour
         if (cliffAhead() || wallAhead())
         {
             changeDirection();
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
         }
     }
 
@@ -87,6 +128,15 @@ public class EnemyMovement : MonoBehaviour
         if (direction.Equals(Vector3.right))
         {
             direction = Vector3.left;
+        }
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+    }
+
+    void drop()
+    {
+        if (!groundBehind() && !groundBelow())
+        {
+            rigidbody.AddForce(Vector2.down * 10, ForceMode2D.Impulse);
         }
     }
 }

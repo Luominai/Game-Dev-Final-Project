@@ -61,6 +61,7 @@ public class SceneLoader : MonoBehaviour
         _scene.enabled = true;
         _pause.enabled = false;
         _game.SetActive(true);
+        _settings.enabled = false;
     }
     public void Settings()
     {

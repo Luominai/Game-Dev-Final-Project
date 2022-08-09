@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 601118576}
   m_Layer: 6
   m_Name: Slime (4)
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   backRayDistance: 0.4
   gravity: 5
   startLeft: 1
+  printGroundChecks: 0
 --- !u!70 &601118577
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1027,7 +1028,7 @@ GameObject:
   - component: {fileID: 1659795655}
   m_Layer: 6
   m_Name: Slime (1)
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   backRayDistance: 0.4
   gravity: 5
   startLeft: 1
+  printGroundChecks: 0
 --- !u!70 &1659795656
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1169,7 +1171,7 @@ GameObject:
   - component: {fileID: 1685266695}
   m_Layer: 6
   m_Name: Slime
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,6 +1298,7 @@ MonoBehaviour:
   backRayDistance: 0.4
   gravity: 5
   startLeft: 0
+  printGroundChecks: 0
 --- !u!1 &1687590585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1314,7 @@ GameObject:
   - component: {fileID: 1687590586}
   m_Layer: 6
   m_Name: Slime (3)
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1334,6 +1337,7 @@ MonoBehaviour:
   backRayDistance: 0.4
   gravity: 5
   startLeft: 1
+  printGroundChecks: 0
 --- !u!70 &1687590587
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1453,7 +1457,7 @@ GameObject:
   - component: {fileID: 1781792556}
   m_Layer: 6
   m_Name: Slime (2)
-  m_TagString: Death
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1476,6 +1480,7 @@ MonoBehaviour:
   backRayDistance: 0.4
   gravity: 5
   startLeft: 0
+  printGroundChecks: 0
 --- !u!70 &1781792557
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

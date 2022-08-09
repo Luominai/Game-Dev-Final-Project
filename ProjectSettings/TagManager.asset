@@ -8,6 +8,7 @@ TagManager:
   - Death
   - Checkpoint
   - Goal
+  - Enemy
   layers:
   - Default
   - TransparentFX

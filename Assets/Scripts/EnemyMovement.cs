@@ -59,11 +59,10 @@ public class EnemyMovement : MonoBehaviour
 
     bool wallAhead()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, direction, horizontalRayDistance, 3);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, direction, horizontalRayDistance);
         if (ray.collider != null)
         {
-            string[] layer = { "Ground" };
-            if (ray.collider.CompareTag("Ground"))
+            if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))
             {
                 horizontalRayColor = Color.red;
                 return true;
@@ -78,7 +77,6 @@ public class EnemyMovement : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .5f, Vector3.down, verticalRayDistance, 3);
         if (ray.collider != null)
         {
-            string[] layer = { "Ground" };
             if (ray.collider.CompareTag("Ground"))
             {
                 verticalRayColor = Color.red;
@@ -91,11 +89,10 @@ public class EnemyMovement : MonoBehaviour
 
     bool groundBehind()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position - direction * .4f, Vector3.down, backRayDistance, 3);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position - direction * .4f, Vector3.down, backRayDistance);
         if (ray.collider != null)
         {
-            string[] layer = { "Ground" };
-            if (ray.collider.CompareTag("Ground"))
+            if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))
             {
                 backRayColor = Color.green;
                 return true;
@@ -106,11 +103,10 @@ public class EnemyMovement : MonoBehaviour
     }
     bool groundAhead()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .4f, Vector3.down, backRayDistance, 3);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .4f, Vector3.down, backRayDistance);
         if (ray.collider != null)
         {
-            string[] layer = { "Ground" };
-            if (ray.collider.CompareTag("Ground"))
+            if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))
             {
                 frontRayColor = Color.green;
                 return true;
@@ -122,11 +118,10 @@ public class EnemyMovement : MonoBehaviour
 
     bool groundBelow()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector3.down, backRayDistance, 3);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector3.down, backRayDistance);
         if (ray.collider != null)
         {
-            string[] layer = { "Ground" };
-            if (ray.collider.CompareTag("Ground"))
+            if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))
             {
                 midRayColor = Color.green;
                 return true;

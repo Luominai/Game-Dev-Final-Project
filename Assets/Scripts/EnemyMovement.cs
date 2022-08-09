@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private Color horizontalRayColor = Color.green;
     private Color verticalRayColor = Color.green;
     private Color backRayColor = Color.green;
+    private Color midRayColor = Color.green;
+    private Color frontRayColor = Color.green;
     private Vector3 direction;
     public float speed;
     public float horizontalRayDistance;
@@ -15,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     public float backRayDistance;
     public float gravity;
     public bool startLeft;
+    public bool printGroundChecks;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +33,19 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, direction * horizontalRayDistance, horizontalRayColor);
-        Debug.DrawRay(transform.position + direction * .5f, Vector3.down * verticalRayDistance, verticalRayColor);
-        Debug.DrawRay(transform.position - direction * .4f, Vector3.down * backRayDistance, backRayColor);
-        Debug.DrawRay(transform.position, Vector3.down * backRayDistance, backRayColor);
+        Debug.DrawRay(transform.position, direction * horizontalRayDistance, horizontalRayColor); //forward
+        Debug.DrawRay(transform.position + direction * .5f, Vector3.down * verticalRayDistance, verticalRayColor); //cliff
+        Debug.DrawRay(transform.position - direction * .4f, Vector3.down * backRayDistance, backRayColor); //back
+        Debug.DrawRay(transform.position, Vector3.down * backRayDistance, midRayColor); //mid
+        Debug.DrawRay(transform.position + direction * .4f, Vector3.down * backRayDistance, frontRayColor); //front
         horizontalMovement();
         drop();
+
+        if (printGroundChecks)
+        {
+            print("Behind: " + groundBehind() + " | " + "Below: " + groundBelow() + " | " + "Ahead: " + groundAhead() + " |");
+            printGroundChecks = false;
+        }
     }
 
     void horizontalMovement()
@@ -94,6 +104,21 @@ public class EnemyMovement : MonoBehaviour
         backRayColor = Color.red;
         return false;
     }
+    bool groundAhead()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .4f, Vector3.down, backRayDistance, 3);
+        if (ray.collider != null)
+        {
+            string[] layer = { "Ground" };
+            if (ray.collider.CompareTag("Ground"))
+            {
+                frontRayColor = Color.green;
+                return true;
+            }
+        }
+        frontRayColor = Color.red;
+        return false;
+    }
 
     bool groundBelow()
     {
@@ -103,11 +128,11 @@ public class EnemyMovement : MonoBehaviour
             string[] layer = { "Ground" };
             if (ray.collider.CompareTag("Ground"))
             {
-                backRayColor = Color.green;
+                midRayColor = Color.green;
                 return true;
             }
         }
-        backRayColor = Color.red;
+        midRayColor = Color.red;
         return false;
     }
 
@@ -134,7 +159,11 @@ public class EnemyMovement : MonoBehaviour
 
     void drop()
     {
-        if (!groundBehind() && !groundBelow())
+        //I tried just putting them in an if loop but it kept short circuiting so I put them here instead
+        bool behind = groundBehind();
+        bool below = groundBelow();
+        bool ahead = groundAhead();
+        if (!behind && !below && !ahead)
         {
             rigidbody.AddForce(Vector2.down * 10, ForceMode2D.Impulse);
         }

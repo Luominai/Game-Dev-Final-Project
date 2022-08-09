@@ -14,11 +14,16 @@ public class SceneLoader : MonoBehaviour
     private GameObject _game;
     private Canvas _menu;
     private GameObject _back;
+    private GameObject _coins;
     // Start is called before the first frame update
     void Start()
     {
         _scene = GameObject.Find("Canvas").GetComponent<Canvas>();
+        _back = _scene.transform.GetChild(1).gameObject;
         _scene.enabled = true;
+        _back.SetActive(false);
+        _coins = _scene.transform.GetChild(0).gameObject;
+        _coins.SetActive(true);
         _game = GameObject.Find("Game");
         _game.SetActive(true);
         _menu = GameObject.Find("Menu").GetComponent<Canvas>();
@@ -45,7 +50,8 @@ public class SceneLoader : MonoBehaviour
     }
     public void ScenePause()
     {
-        _scene.enabled = false;
+        _coins.SetActive(false);
+        _back.SetActive(true);
         _game.SetActive(false);
         
     }
@@ -55,12 +61,14 @@ public class SceneLoader : MonoBehaviour
     }
     public void Back()
     {
-        _scene.enabled = true;
+        _coins.SetActive(true);
+        _back.SetActive(false);
         _game.SetActive(true);
     }
     public void Settings()
     {
         _menu.enabled = false;
+        
      
     }
 

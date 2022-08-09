@@ -47,7 +47,7 @@ public class SceneLoader : MonoBehaviour
     {
         _scene.enabled = false;
         _game.SetActive(false);
-        _back.
+        
     }
     public void Menu()
     {

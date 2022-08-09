@@ -50,6 +50,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void ScenePause()
     {
+        //print("wow");
         _coins.SetActive(false);
         _back.SetActive(true);
         _game.SetActive(false);
@@ -61,6 +62,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void Back()
     {
+        print("Back clicked");
         _coins.SetActive(true);
         _back.SetActive(false);
         _game.SetActive(true);

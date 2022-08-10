@@ -10,25 +10,27 @@ public class Collect : MonoBehaviour
     private CircleCollider2D _circle;
     private TextMeshProUGUI _coins;
     private bool coincollected;
-    private int coinnumber = 0;
+    
     private Collect instance;
-    private Data _data;
+    
     void Start()
     {
         _circle = GetComponent<CircleCollider2D>(); // gets collider
-        _coins = GameObject.Find("Canvas").transform.GetChild(0).transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>(); // gets the text from the Coin Number child of the canvas
+        _coins = GameObject.Find("Canvas").transform.GetChild(1).transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>(); // gets the text from the Coin Number child of the canvas
         coincollected = false; // coin isnt collected when game starts
         if (instance == null )
         {
             instance = this;
         }
-        _data = GameObject.Find("Data").GetComponent<Data>();
+
+        _coins.text = "" + LevelData.coinCount;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Cointext();
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,7 +38,8 @@ public class Collect : MonoBehaviour
         {
             Destroy(other.gameObject); // destroys it
             coincollected = true; // coin collected
-            coinnumber++; // coin count increases
+            LevelData.coinCount++; // coin count increases
+            
             instance.Cointext();
 
         }
@@ -45,8 +48,8 @@ public class Collect : MonoBehaviour
     {
         if(coincollected == true)
         {
-            _coins.text = "" + coinnumber;
-            _data.SetScore(coinnumber);
+            _coins.text = "" + LevelData.coinCount;
+            
         }
     }
 

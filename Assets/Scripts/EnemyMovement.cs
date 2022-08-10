@@ -34,10 +34,10 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, direction * horizontalRayDistance, horizontalRayColor); //forward
-        Debug.DrawRay(transform.position + direction * .5f, Vector3.down * verticalRayDistance, verticalRayColor); //cliff
-        Debug.DrawRay(transform.position - direction * .4f, Vector3.down * backRayDistance, backRayColor); //back
+        Debug.DrawRay(transform.position + direction * .75f, Vector3.down * verticalRayDistance, verticalRayColor); //cliff
+        Debug.DrawRay(transform.position - direction * .6f, Vector3.down * backRayDistance, backRayColor); //back
         Debug.DrawRay(transform.position, Vector3.down * backRayDistance, midRayColor); //mid
-        Debug.DrawRay(transform.position + direction * .4f, Vector3.down * backRayDistance, frontRayColor); //front
+        Debug.DrawRay(transform.position + direction * .6f, Vector3.down * backRayDistance, frontRayColor); //front
         horizontalMovement();
         drop();
 
@@ -74,7 +74,7 @@ public class EnemyMovement : MonoBehaviour
 
     bool cliffAhead()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .5f, Vector3.down, verticalRayDistance, 3);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .75f, Vector3.down, verticalRayDistance);
         if (ray.collider != null)
         {
             if (ray.collider.CompareTag("Ground"))
@@ -89,7 +89,7 @@ public class EnemyMovement : MonoBehaviour
 
     bool groundBehind()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position - direction * .4f, Vector3.down, backRayDistance);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position - direction * .6f, Vector3.down, backRayDistance);
         if (ray.collider != null)
         {
             if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))
@@ -103,7 +103,7 @@ public class EnemyMovement : MonoBehaviour
     }
     bool groundAhead()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .4f, Vector3.down, backRayDistance);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position + direction * .6f, Vector3.down, backRayDistance);
         if (ray.collider != null)
         {
             if (ray.collider.CompareTag("Ground") || ray.collider.CompareTag("Enemy"))

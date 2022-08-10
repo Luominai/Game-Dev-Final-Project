@@ -219,9 +219,9 @@ public class Movement : MonoBehaviour
         rigidbody.sharedMaterial = material;
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Death") || collision.gameObject.CompareTag("Enemy") && !isCurrentlyDying)
+        if ((collision.CompareTag("Death") || collision.gameObject.CompareTag("Enemy")) && !isCurrentlyDying)
         {
             //begin the dying routine
             isCurrentlyDying = true;

@@ -12,6 +12,7 @@ public class Collect : MonoBehaviour
     private bool coincollected;
     private int coinnumber = 0;
     private Collect instance;
+    private Data _data;
     void Start()
     {
         _circle = GetComponent<CircleCollider2D>(); // gets collider
@@ -21,6 +22,7 @@ public class Collect : MonoBehaviour
         {
             instance = this;
         }
+        _data = GameObject.Find("Data").GetComponent<Data>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class Collect : MonoBehaviour
         if(coincollected == true)
         {
             _coins.text = "" + coinnumber;
+            _data.SetScore(coinnumber);
         }
     }
 

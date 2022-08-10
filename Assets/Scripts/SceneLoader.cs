@@ -16,19 +16,24 @@ public class SceneLoader : MonoBehaviour
     private GameObject _back;
     private GameObject _coins;
     private GameObject _background;
+    public GameObject _settings;
     // Start is called before the first frame update
     void Start()
     {
         _scene = GameObject.Find("Canvas").GetComponent<Canvas>();
-        _back = _scene.transform.GetChild(1).gameObject;
+        _back = _scene.transform.GetChild(2).gameObject;
         _scene.enabled = true;
         _back.SetActive(false);
-        _coins = _scene.transform.GetChild(0).gameObject;
+        _coins = _scene.transform.GetChild(1).gameObject;
         _coins.SetActive(true);
         _game = GameObject.Find("Game");
         _game.SetActive(true);
         _menu = GameObject.Find("Menu").GetComponent<Canvas>();
         _background = GameObject.Find("Background").transform.GetChild(0).gameObject;
+        _settings = GameObject.Find("Canvas").transform.Find("SettingsPage").gameObject;
+        print(_settings);
+
+        _settings.SetActive(false);
       
         
     }
@@ -58,6 +63,7 @@ public class SceneLoader : MonoBehaviour
         _back.SetActive(true);
         _game.SetActive(false);
         _background.SetActive(false);
+        _settings.SetActive(false);
         
     }
     public void Menu()
@@ -71,12 +77,18 @@ public class SceneLoader : MonoBehaviour
         _back.SetActive(false);
         _game.SetActive(true);
         _background.SetActive(true);
+        _settings.SetActive(false);
     }
     public void Settings()
     {
         _menu.enabled = false;
-        
-     
+        _coins.SetActive(false);
+        _back.SetActive(false);
+        _game.SetActive(false);
+        _background.SetActive(false);
+        _settings.SetActive(true);
+
+
     }
 
 }

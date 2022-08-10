@@ -77,6 +77,10 @@ public class Movement : MonoBehaviour
         dash();
         bounce();
         jump();
+        if (leftHandMode)
+        {
+            axisName = "HorizontalLeft";
+        }
         //print(movingLeft + ", " + movingRight);
         //print(Input.GetAxis("Horizontal"));
     }

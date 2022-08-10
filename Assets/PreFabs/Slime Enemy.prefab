@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2998666221441470396}
   - component: {fileID: 2998666221441470397}
   - component: {fileID: 2998666221441470386}
+  - component: {fileID: 1399120038819393418}
   m_Layer: 6
   m_Name: Slime Enemy
   m_TagString: Enemy
@@ -121,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0027375787, y: 0.028306846}
-  m_Size: {x: 0.8822429, y: 0.55818206}
+  m_Offset: {x: -0.004605489, y: 0.03204557}
+  m_Size: {x: 0.89348304, y: 0.5656881}
   m_Direction: 1
 --- !u!114 &2998666221441470386
 MonoBehaviour:
@@ -143,3 +144,19 @@ MonoBehaviour:
   gravity: 5
   startLeft: 1
   printGroundChecks: 0
+--- !u!70 &1399120038819393418
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998666221441470387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009572782, y: 0.028719392}
+  m_Size: {x: 0.904272, y: 0.5826237}
+  m_Direction: 1

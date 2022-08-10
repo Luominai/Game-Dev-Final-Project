@@ -14261,6 +14261,7 @@ GameObject:
   - component: {fileID: 994680035}
   - component: {fileID: 994680034}
   - component: {fileID: 994680033}
+  - component: {fileID: 994680037}
   m_Layer: 0
   m_Name: slime_8
   m_TagString: Untagged
@@ -14414,6 +14415,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &994680037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994680031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e17e4f004191df4ca8957669965a9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023944657
 GameObject:
   m_ObjectHideFlags: 0

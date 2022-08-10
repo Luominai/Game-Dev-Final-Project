@@ -221,7 +221,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Death") && !isCurrentlyDying)
+        if ((collision.CompareTag("Enemy") || collision.CompareTag("Death")) && !isCurrentlyDying)
         {
             //begin the dying routine
             isCurrentlyDying = true;

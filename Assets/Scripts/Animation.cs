@@ -12,8 +12,6 @@ public class Animation : MonoBehaviour
     public CameraMovement _camera;
     private GameObject slimesprite;
     private GameObject catsprite;
- 
-
 
 
     // Start is called before the first frame update
@@ -24,7 +22,7 @@ public class Animation : MonoBehaviour
         _camera = GameObject.Find("CameraController").GetComponent<CameraMovement>();
         slimesprite = GameObject.Find("Game").transform.Find("Animation").transform.Find("slime_8").gameObject;
         catsprite = GameObject.Find("Game").transform.Find("Animation").transform.Find("cat_10").gameObject;
-
+        cameracat();
     }
 
     // Update is called once per frame
@@ -33,7 +31,8 @@ public class Animation : MonoBehaviour
         isJumping();
         isWalkingRight();
         isWalkingLeft();
-       // catjumping();
+
+    
         
     }
     private void isJumping()
@@ -73,11 +72,13 @@ public class Animation : MonoBehaviour
     }
     private void cameracat()
     {
-        if(Shop.catclicked == true && _animator.runtimeAnimatorController == _cat)
+        print(Shop.catclicked);
+        if(Shop.catclicked == true)
         {
+
             slimesprite.SetActive(false);
             _camera.player = catsprite;
-            _animator.runtimeAnimatorController = _cat;
+            _animator.runtimeAnimatorController = _cat; 
         }
         else
         {

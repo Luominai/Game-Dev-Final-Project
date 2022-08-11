@@ -218,7 +218,7 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Mouse1))
         {
-            rigidbody.sharedMaterial.bounciness = 1;
+            rigidbody.sharedMaterial.bounciness = 0.8f;
         } else
         {
             rigidbody.sharedMaterial.bounciness = 0;

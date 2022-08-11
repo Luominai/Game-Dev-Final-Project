@@ -20171,8 +20171,8 @@ GameObject:
   - component: {fileID: 1883344051}
   - component: {fileID: 1883344052}
   m_Layer: 0
-  m_Name: WinCollider (Insert Code for this)
-  m_TagString: Untagged
+  m_Name: WinCollider
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20205,7 +20205,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 117.07631, y: -5.469243}
+  m_Offset: {x: 117.07631, y: -11.404106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -20216,7 +20216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.136261, y: 1.0531483}
+  m_Size: {x: 12.136261, y: 22.738228}
   m_EdgeRadius: 0
 --- !u!1 &1898956277
 GameObject:

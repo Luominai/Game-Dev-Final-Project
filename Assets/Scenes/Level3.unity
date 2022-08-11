@@ -17922,7 +17922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e17e4f004191df4ca8957669965a9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource: {fileID: 0}
+  audiosource: {fileID: 69091776}
 --- !u!50 &1240314642
 Rigidbody2D:
   serializedVersion: 4
@@ -20612,6 +20612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae23c63f6280ea49a42ddc30e7bcc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1527218446}
 --- !u!1 &1862112784
 GameObject:
   m_ObjectHideFlags: 0

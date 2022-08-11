@@ -8,7 +8,10 @@ public class Animation : MonoBehaviour
     private Movement _movement;
     private Animator _animator;
     public RuntimeAnimatorController _cat;
-    public AnimatorControllerParameter _slime;
+    public RuntimeAnimatorController _slime;
+    public CameraMovement _camera;
+    private GameObject slimesprite;
+    private GameObject catsprite;
  
 
 
@@ -16,12 +19,11 @@ public class Animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _movement = GameObject.Find("slime_8").GetComponent<Movement>();
+        _movement = GameObject.Find("Game").transform.Find("Animation").transform.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
-        
-        _animator.runtimeAnimatorController = _cat;
-    
-        
+        _camera = GameObject.Find("CameraController").GetComponent<CameraMovement>();
+        slimesprite = GameObject.Find("Game").transform.Find("Animation").transform.Find("slime_8").gameObject;
+        catsprite = GameObject.Find("Game").transform.Find("Animation").transform.Find("cat_10").gameObject;
 
     }
 
@@ -67,6 +69,23 @@ public class Animation : MonoBehaviour
         else
         {
             _animator.SetBool("walking left", false);
+        }
+    }
+    private void cameracat()
+    {
+        if(Shop.catclicked == true && _animator.runtimeAnimatorController == _cat)
+        {
+            slimesprite.SetActive(false);
+            _camera.player = catsprite;
+            _animator.runtimeAnimatorController = _cat;
+        }
+        else
+        {
+            slimesprite.SetActive(true);
+            catsprite.SetActive(false);
+            _camera.player = slimesprite;
+            _animator.runtimeAnimatorController = _slime;
+
         }
     }
    

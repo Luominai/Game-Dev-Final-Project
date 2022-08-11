@@ -40,9 +40,12 @@ public class Movement : MonoBehaviour
     public bool pressingD;
 
     private Animator _animator;
+    private DataTesting data;
 
     void Start()
     {
+        data = GameObject.Find("Data").GetComponent<DataTesting>();
+        leftHandMode = data.leftHandMode;
         rigidbody = GetComponent<Rigidbody2D>();
         if (leftHandMode)
         {

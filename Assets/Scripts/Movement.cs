@@ -65,12 +65,14 @@ public class Movement : MonoBehaviour
 
         if (leftHandMode)
         {
+            axisName = "HorizontalLeft";
             pressingW = Input.GetKey(KeyCode.I);
             pressingA = Input.GetKey(KeyCode.J);
             pressingS = Input.GetKey(KeyCode.K);
             pressingD = Input.GetKey(KeyCode.L);
         } else
         {
+            axisName = "Horizontal";
             pressingW = Input.GetKey(KeyCode.W);
             pressingA = Input.GetKey(KeyCode.A);
             pressingS = Input.GetKey(KeyCode.S);
@@ -80,10 +82,6 @@ public class Movement : MonoBehaviour
         dash();
         bounce();
         jump();
-        if (leftHandMode)
-        {
-            axisName = "HorizontalLeft";
-        }
         //print(movingLeft + ", " + movingRight);
         //print(Input.GetAxis("Horizontal"));
     }

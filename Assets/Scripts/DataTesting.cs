@@ -27,11 +27,11 @@ public class DataTesting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print("Master: " + masterVolume + " | " + "Music: " + musicVolume + " | " + "SFX: " + SFXVolume);
     }
 
     public void loadLevel1()
     {
-        SceneManager.LoadScene("Kevin's test scene");
+        SceneManager.LoadScene("Level1");
     }
 }

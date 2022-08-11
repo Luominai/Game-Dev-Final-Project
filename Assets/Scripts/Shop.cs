@@ -33,12 +33,13 @@ public class Shop : MonoBehaviour
     }
     public void catCost()
     {
-        if(catclicked == true && LevelData.coinCount >= 100)
+        if(catclicked == true &&  LevelData.coinCount >= 100)
         {
             _catcost.text = "SOLD";
             LevelData.coinCount -= 100;
             catsold = true;
-            _button.enabled = false;
+            _button.interactable = false;
+            _coincount.text = "" + LevelData.coinCount;
             
 
         }

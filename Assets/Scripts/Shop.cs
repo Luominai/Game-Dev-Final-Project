@@ -22,6 +22,7 @@ public class Shop : MonoBehaviour
         _coincount.text = "" + LevelData.coinCount;
         _button = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
         catsold = false;
+
     }
 
     // Update is called once per frame

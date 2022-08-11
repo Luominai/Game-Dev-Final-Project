@@ -7,6 +7,9 @@ public class Animation : MonoBehaviour
 {
     private Movement _movement;
     private Animator _animator;
+    private Animator _catanimator;
+    private GameObject _cat;
+    private GameObject _slime;
 
 
     // Start is called before the first frame update
@@ -14,7 +17,12 @@ public class Animation : MonoBehaviour
     {
         _movement = GameObject.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
-      
+        _slime = GameObject.Find("Animation");
+        _catanimator = GameObject.Find("CatAnimation").GetComponent<Animator>();
+        _cat = GameObject.Find("CatAnimation");
+        _cat.SetActive(false);
+        _slime.SetActive(true);    
+
     }
 
     // Update is called once per frame
@@ -57,6 +65,21 @@ public class Animation : MonoBehaviour
         else
         {
             _animator.SetBool("walking left", false);
+        }
+    }
+    private void catjuming()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.Space) && Shop.catclicked == true)
+        {
+            _slime.SetActive(false);
+            _catanimator.SetBool("jumping", true);
+        }
+        else
+        {
+            
+            _animator.SetBool("jumping", false);
+
         }
     }
 

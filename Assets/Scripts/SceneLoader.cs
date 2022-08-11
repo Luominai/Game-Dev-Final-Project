@@ -21,10 +21,10 @@ public class SceneLoader : MonoBehaviour
     void Start()
     {
         _scene = GameObject.Find("Canvas").GetComponent<Canvas>();
-        _back = _scene.transform.GetChild(2).gameObject;
+        _back = _scene.transform.Find("PauseMenu").gameObject;
         _scene.enabled = true;
         _back.SetActive(false);
-        _coins = _scene.transform.GetChild(1).gameObject;
+        _coins = _scene.transform.Find("Coins").gameObject;
         _coins.SetActive(true);
         _game = GameObject.Find("Game");
         _game.SetActive(true);

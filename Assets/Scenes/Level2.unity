@@ -12085,6 +12085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33c911a2cd1056428ca002a25f23802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cat: {fileID: 0}
 --- !u!95 &937182612
 Animator:
   serializedVersion: 4
@@ -25694,7 +25695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.99
+      value: 72.6
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.y

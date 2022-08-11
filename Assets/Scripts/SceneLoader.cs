@@ -32,8 +32,6 @@ public class SceneLoader : MonoBehaviour
         _menu = GameObject.Find("Menu").GetComponent<Canvas>();
         _background = GameObject.Find("Background").transform.GetChild(0).gameObject;
         _settings = GameObject.Find("Canvas").transform.Find("SettingsPage").gameObject;
-        print(_settings);
-
         _settings.SetActive(false);
       
         

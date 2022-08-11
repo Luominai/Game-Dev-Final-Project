@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cat walking right
+  m_Name: blinking
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 661556734, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
-    - time: 0.083333336
-      value: {fileID: 661556734, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+      value: {fileID: 1954029670, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+    - time: 0.16666667
+      value: {fileID: -746913747, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1954029670, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
     attribute: m_Sprite
     path: cat_10
     classID: 212
@@ -42,14 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 661556734, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
-    - {fileID: 661556734, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+    - {fileID: 1954029670, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+    - {fileID: -746913747, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
+    - {fileID: 1954029670, guid: ff3a54652e1cf28479a11c4b0d5de365, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -929,7 +929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31634076}
   - component: {fileID: 31634077}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (11)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36457827}
   - component: {fileID: 36457828}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (6)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 150186305}
   - component: {fileID: 150186307}
   - component: {fileID: 150186306}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2507,7 +2507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 99.14
+      value: 100.95
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3744,7 +3744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285602848}
   - component: {fileID: 285602849}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (5)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -4056,7 +4056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308715503}
   - component: {fileID: 308715504}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (10)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -4687,7 +4687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 379941081}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5881,7 +5881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472970650}
   - component: {fileID: 472970651}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (3)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -6430,7 +6430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 559245663}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6445,7 +6445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559245662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: -0.09, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8222,7 +8222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667094598}
   - component: {fileID: 667094599}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (13)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -8477,7 +8477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 675203872}
   - component: {fileID: 675203873}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (2)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -8841,7 +8841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712344817}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8856,7 +8856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712344816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: -0.22, z: 96.5}
+  m_LocalPosition: {x: 14, y: 0.96, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9420,7 +9420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758333348}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9575,7 +9575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778733805}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11571,7 +11571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896351366}
   - component: {fileID: 896351367}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (1)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -12085,6 +12085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33c911a2cd1056428ca002a25f23802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cat: {fileID: 0}
 --- !u!95 &937182612
 Animator:
   serializedVersion: 4
@@ -12575,7 +12576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 989472628}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12590,7 +12591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989472627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: 0.01, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12852,9 +12853,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 150186305}
     m_Modifications:
+    - target: {fileID: 81657351469125803, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2889189542553028524, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
       propertyPath: m_Name
       value: Checkpoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889189542553028524, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5308015427819208501, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
       propertyPath: m_RootOrder
@@ -12906,7 +12915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5904804456612114547, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.23
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9093779033108506452, guid: 2ea1325cd257fe947aa06061a7260e3e, type: 3}
       propertyPath: m_Size.x
@@ -19697,7 +19706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159571473}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19712,7 +19721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159571472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: 0.01, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19912,6 +19921,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 90561805}
     m_Modifications:
+    - target: {fileID: 2998666221441470386, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
+      propertyPath: verticalRayDistance
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470387, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_Name
       value: Slime Enemy (1)
@@ -20584,7 +20597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261481132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21103,7 +21116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327590980}
   - component: {fileID: 1327590981}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (14)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -21450,7 +21463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367321667}
   - component: {fileID: 1367321668}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (9)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -23195,7 +23208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1539829821}
   - component: {fileID: 1539829822}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (8)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -23761,7 +23774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602429429}
   - component: {fileID: 1602429430}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (7)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -24957,7 +24970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1712195472}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25682,7 +25695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.99
+      value: 72.6
       objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470398, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26257,7 +26270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1791544428}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26272,7 +26285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791544427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: -0.04, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27707,7 +27720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941081725}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27722,7 +27735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941081724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: -0.04, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28354,7 +28367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039494853}
   - component: {fileID: 2039494854}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checkpoint (12)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -28412,7 +28425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040906028}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28427,7 +28440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040906027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.98, y: -1.27, z: 96.5}
+  m_LocalPosition: {x: 20.98, y: 0.2, z: 96.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29564,7 +29577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105051539}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

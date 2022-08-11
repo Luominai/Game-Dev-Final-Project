@@ -19920,6 +19920,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 90561805}
     m_Modifications:
+    - target: {fileID: 2998666221441470386, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
+      propertyPath: verticalRayDistance
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2998666221441470387, guid: ba5140658c6cf8e4b8366571ebf1b5dd, type: 3}
       propertyPath: m_Name
       value: Slime Enemy (1)

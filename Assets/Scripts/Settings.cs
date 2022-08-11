@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Settings : MonoBehaviour
 {
     private Movement _movement;
+    private DataTesting data;
  
     // Start is called before the first frame update
     void Start()
     {
         _movement = GameObject.Find("Animation").transform.GetChild(0).GetComponent<Movement>();
-        
+        data = GameObject.Find("Data").GetComponent<DataTesting>();
+
     }
 
     // Update is called once per frame
@@ -29,5 +31,7 @@ public class Settings : MonoBehaviour
         {
             _movement.leftHandMode = true;
         }
+
+        data.leftHandMode = _movement.leftHandMode;
     }
 }

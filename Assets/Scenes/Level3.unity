@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1057515086}
         m_TargetAssemblyTypeName: AdjustAudio, Assembly-CSharp
         m_MethodName: changeMusicVolume
         m_Mode: 1
@@ -2489,7 +2489,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1057515086}
         m_TargetAssemblyTypeName: AdjustAudio, Assembly-CSharp
         m_MethodName: changeSFXVolume
         m_Mode: 1
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1057515086}
         m_TargetAssemblyTypeName: AdjustAudio, Assembly-CSharp
         m_MethodName: changeMasterVolume
         m_Mode: 1

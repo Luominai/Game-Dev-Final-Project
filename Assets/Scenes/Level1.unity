@@ -10316,7 +10316,7 @@ MonoBehaviour:
   minY: 0
   maxX: 133
   maxY: 20
-  player: {fileID: 1503983946}
+  player: {fileID: 1912783385}
 --- !u!4 &1354671164
 Transform:
   m_ObjectHideFlags: 0

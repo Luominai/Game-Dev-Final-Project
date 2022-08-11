@@ -12,6 +12,8 @@ public class Collect : MonoBehaviour
     private bool coincollected;
     
     private Collect instance;
+
+    public AudioSource audiosource;
     
     void Start()
     {
@@ -39,7 +41,8 @@ public class Collect : MonoBehaviour
             Destroy(other.gameObject); // destroys it
             coincollected = true; // coin collected
             LevelData.coinCount++; // coin count increases
-            
+
+            audiosource.Play();
             instance.Cointext();
 
         }

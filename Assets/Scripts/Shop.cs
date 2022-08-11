@@ -8,47 +8,90 @@ public class Shop : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI _catcost;
-    public static bool catclicked;
+    public static bool catequipped;
+    public static bool bowequipped;
     private TextMeshProUGUI _coincount;
     private Button _button;
-    private bool catsold;
+    private bool catbought;
+    private bool bowbought;
+    public Toggle _cattoggle;
+    public Toggle _bowtoggle;
    
 
     void Start()
     {
         _catcost = GameObject.Find("Canvas").transform.Find("cat shop").transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-        catclicked = false;
+        catequipped = false;
         _coincount = GameObject.Find("Canvas").transform.Find("Coin Text").GetComponent<TextMeshProUGUI>();
         _coincount.text = "" + LevelData.coinCount;
         _button = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
-        catsold = false;
+        catbought = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        catCost();
-    
+        if (catbought)
+        {
+            _cattoggle.enabled = true;
+        } 
+        else
+        {
+            _cattoggle.enabled = false;
+        }
+        iscatcostume();
+
+        /*
+        if (bowbought)
+        {
+            _bowtoggle.enabled = true;
+        }
+        else
+        {
+            _bowtoggle.enabled = false;
+        }
+        */
     }
-    public void catCost()
+    public void buycat()
     {
-        if(catclicked == true &&  LevelData.coinCount >= 100)
+        if(true)//(LevelData.coinCount >= 100)
         {
             _catcost.text = "SOLD";
             LevelData.coinCount -= 100;
-            catsold = true;
+            catbought = true;
             _button.interactable = false;
             _coincount.text = "" + LevelData.coinCount;
-            
 
         }
     }
-    public void catclick()
+    public void iscatcostume()
     {
-        print("clicked!");
-        catclicked = true;
+        if (_cattoggle.isOn)
+        {
+            bowequipped = false;
+            catequipped = true;
+            Settings.name = "cat_10";
+        }
     }
 
+    public void isdefault()
+    {
+        if (_cattoggle.isOn)
+        {
+            bowequipped = false;
+            catequipped = false;
+            Settings.name = "slime_8";
+        }
+    }
 
+    public void isbowcostume()
+    {
+        if (_bowtoggle.isOn)
+        {
+            catequipped = false;
+            bowequipped = true;
+            Settings.name = "";
+        }
+    }
 }

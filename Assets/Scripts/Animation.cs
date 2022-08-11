@@ -72,13 +72,17 @@ public class Animation : MonoBehaviour
     }
     private void cameracat()
     {
-        print(Shop.catclicked);
-        if(Shop.catclicked == true)
+        print(Shop.catequipped);
+        if(Shop.catequipped == true)
         {
 
             slimesprite.SetActive(false);
             _camera.player = catsprite;
             _animator.runtimeAnimatorController = _cat; 
+        }
+        else if (Shop.bowequipped)
+        {
+            //put code to equip bow costume here
         }
         else
         {

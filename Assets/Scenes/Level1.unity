@@ -635,14 +635,13 @@ GameObject:
   - component: {fileID: 125302539}
   - component: {fileID: 125302541}
   - component: {fileID: 125302540}
-  - component: {fileID: 125302542}
   m_Layer: 0
   m_Name: CatAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &125302539
 Transform:
   m_ObjectHideFlags: 0
@@ -694,18 +693,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &125302542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125302538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33c911a2cd1056428ca002a25f23802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &165892943
 PrefabInstance:
   m_ObjectHideFlags: 0

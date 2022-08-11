@@ -7,9 +7,9 @@ public class Animation : MonoBehaviour
 {
     private Movement _movement;
     private Animator _animator;
-    private Animator _catanimator;
-    private GameObject _cat;
-    private GameObject _slime;
+   // private Animator _catanimator;
+   // private GameObject _cat;
+   // private GameObject _slime;
 
 
 
@@ -18,11 +18,11 @@ public class Animation : MonoBehaviour
     {
         _movement = GameObject.Find("slime_8").GetComponent<Movement>();
         _animator = GetComponent<Animator>();
-        _slime = GameObject.Find("Animation");
-        _catanimator = GameObject.Find("CatAnimation").GetComponent<Animator>();
-        _cat = GameObject.Find("CatAnimation");
-        _cat.SetActive(false);
-        _slime.SetActive(true);  
+       // _slime = GameObject.Find("Animation");
+       // _catanimator = GameObject.Find("CatAnimation").GetComponent<Animator>();
+       // _cat = GameObject.Find("CatAnimation");
+       // _cat.SetActive(false);
+        // _slime.SetActive(true);  
         
 
     }
@@ -33,7 +33,7 @@ public class Animation : MonoBehaviour
         isJumping();
         isWalkingRight();
         isWalkingLeft();
-        catjumping();
+       // catjumping();
         
     }
     private void isJumping()
@@ -71,7 +71,7 @@ public class Animation : MonoBehaviour
             _animator.SetBool("walking left", false);
         }
     }
-    private void catjumping()
+    /*private void catjumping()
     {
         
         if (Input.GetKeyDown(KeyCode.Space) && Shop.catclicked == true)
@@ -86,6 +86,6 @@ public class Animation : MonoBehaviour
             _animator.SetBool("jumping", false);
 
         }
-    }
+    } */
 
 }

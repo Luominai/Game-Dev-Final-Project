@@ -157,6 +157,7 @@ MonoBehaviour:
   shop: 
   credits: 
   menu: MenuScene
+  howtoplay: 
   _settings: {fileID: 0}
 --- !u!4 &36902041
 Transform:
@@ -813,7 +814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78ebac6ba6e64504c80b437a068fa023, type: 2}
   m_sharedMaterial: {fileID: -8704158601395205399, guid: 78ebac6ba6e64504c80b437a068fa023, type: 2}

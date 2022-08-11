@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI _catcost;
     public static bool catclicked;
     private TextMeshProUGUI _coincount;
+    private Button _button;
+    private bool catsold;
    
 
     void Start()
@@ -18,25 +20,25 @@ public class Shop : MonoBehaviour
         catclicked = false;
         _coincount = GameObject.Find("Canvas").transform.Find("Coin Text").GetComponent<TextMeshProUGUI>();
         _coincount.text = "" + LevelData.coinCount;
+        _button = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
+        catsold = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         catCost();
+    
     }
     public void catCost()
     {
-        if(catclicked == true)
+        if(catclicked == true && LevelData.coinCount >= 100)
         {
             _catcost.text = "SOLD";
-            LevelData.coinCount -= 50;
-
-        }
-        else
-        {
-            catclicked = false;
-            _catcost.text = "50";
+            LevelData.coinCount -= 100;
+            catsold = true;
+            _button.enabled = false;
+            
 
         }
     }

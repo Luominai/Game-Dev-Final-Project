@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     public string shop;
     public string credits;
     public string menu;
+    public string howtoplay;
     private Canvas _scene;
     private GameObject _game;
     private Canvas _menu;
@@ -55,6 +56,10 @@ public class SceneLoader : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene(credits);
+    }
+    public void Howtoplay()
+    {
+        SceneManager.LoadScene(howtoplay);
     }
     public void ScenePause()
     {

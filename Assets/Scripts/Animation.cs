@@ -12,6 +12,7 @@ public class Animation : MonoBehaviour
     private GameObject _slime;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class Animation : MonoBehaviour
         _catanimator = GameObject.Find("CatAnimation").GetComponent<Animator>();
         _cat = GameObject.Find("CatAnimation");
         _cat.SetActive(false);
-        _slime.SetActive(true);    
+        _slime.SetActive(true);  
+        
 
     }
 
@@ -31,6 +33,8 @@ public class Animation : MonoBehaviour
         isJumping();
         isWalkingRight();
         isWalkingLeft();
+        catjumping();
+        
     }
     private void isJumping()
     {
@@ -67,13 +71,14 @@ public class Animation : MonoBehaviour
             _animator.SetBool("walking left", false);
         }
     }
-    private void catjuming()
+    private void catjumping()
     {
         
         if (Input.GetKeyDown(KeyCode.Space) && Shop.catclicked == true)
         {
             _slime.SetActive(false);
             _catanimator.SetBool("jumping", true);
+            print(Shop.catclicked);
         }
         else
         {

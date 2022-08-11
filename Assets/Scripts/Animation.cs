@@ -75,8 +75,8 @@ public class Animation : MonoBehaviour
         print(Shop.catequipped);
         if(Shop.catequipped == true)
         {
-
             slimesprite.SetActive(false);
+            //bowsprite.SetActive(false);  //make bowsprite later
             _camera.player = catsprite;
             _animator.runtimeAnimatorController = _cat; 
         }

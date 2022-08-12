@@ -12,6 +12,8 @@ public class DataTesting : MonoBehaviour
     public float musicVolume = 0;
     public bool leftHandMode = false;
     public int coins = 0;
+    public bool catbought = false;
+    public bool bowbought = false;
     void Awake()
     {
         if (data != null)
@@ -23,7 +25,10 @@ public class DataTesting : MonoBehaviour
         data = this;
         DontDestroyOnLoad(gameObject);
     }
-
+  void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

@@ -11,12 +11,14 @@ public class Shop : MonoBehaviour
     public static bool catequipped;
     public static bool bowequipped;
     private TextMeshProUGUI _coincount;
-    private Button _button;
+    private Button _catbutton;
     private bool catbought;
     private bool bowbought;
-    public Toggle _cattoggle;
+    private Toggle _cattoggle;
     public Toggle _bowtoggle;
-   
+    private TextMeshProUGUI _bowcost;
+    private Button _bowbutton;
+
 
     void Start()
     {
@@ -24,9 +26,14 @@ public class Shop : MonoBehaviour
         catequipped = false;
         _coincount = GameObject.Find("Canvas").transform.Find("Coin Text").GetComponent<TextMeshProUGUI>();
         _coincount.text = "" + LevelData.coinCount;
-        _button = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
+        _catbutton = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
+        _cattoggle = GameObject.Find("Canvas").transform.Find("cat toggle").GetComponent<Toggle>();
         catbought = false;
-
+      
+        bowbought = false;
+        _bowtoggle = GameObject.Find("Canvas").transform.Find("bow toggle").GetComponent<Toggle>();
+        _bowcost = GameObject.Find("Canvas").transform.Find("bow shop").transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+        _bowbutton = GameObject.Find("Canvas").transform.Find("bow shop").GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -42,7 +49,7 @@ public class Shop : MonoBehaviour
         }
         iscatcostume();
 
-        /*
+        
         if (bowbought)
         {
             _bowtoggle.enabled = true;
@@ -51,18 +58,29 @@ public class Shop : MonoBehaviour
         {
             _bowtoggle.enabled = false;
         }
-        */
+        
     }
     public void buycat()
     {
-        if(true)//(LevelData.coinCount >= 100)
+        if(LevelData.coinCount >= 100)
         {
             _catcost.text = "SOLD";
             LevelData.coinCount -= 100;
             catbought = true;
-            _button.interactable = false;
+            _catbutton.interactable = false;
             _coincount.text = "" + LevelData.coinCount;
 
+        }
+    }
+    public void buybow()
+    {
+        if(LevelData.coinCount >=200)
+        {
+            _bowcost.text = "SOLD";
+            LevelData.coinCount -= 200;
+            bowbought = true;
+            _bowbutton.interactable = false;
+            _coincount.text = "" + LevelData.coinCount;
         }
     }
     public void iscatcostume()
@@ -91,7 +109,7 @@ public class Shop : MonoBehaviour
         {
             catequipped = false;
             bowequipped = true;
-            Settings.name = "";
+            Settings.name = "bow_0";
         }
     }
 }

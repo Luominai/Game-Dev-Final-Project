@@ -12,8 +12,8 @@ public class Shop : MonoBehaviour
     public static bool bowequipped;
     private TextMeshProUGUI _coincount;
     private Button _catbutton;
-    private bool catbought;
-    private bool bowbought;
+    private bool catbought = false;
+    private bool bowbought = false;
     private Toggle _cattoggle;
     public Toggle _bowtoggle;
     private TextMeshProUGUI _bowcost;
@@ -28,12 +28,11 @@ public class Shop : MonoBehaviour
         _coincount.text = "" + LevelData.coinCount;
         _catbutton = GameObject.Find("Canvas").transform.Find("cat shop").GetComponent<Button>();
         _cattoggle = GameObject.Find("Canvas").transform.Find("cat toggle").GetComponent<Toggle>();
-        catbought = false;
-      
-        bowbought = false;
+  
         _bowtoggle = GameObject.Find("Canvas").transform.Find("bow toggle").GetComponent<Toggle>();
         _bowcost = GameObject.Find("Canvas").transform.Find("bow shop").transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
         _bowbutton = GameObject.Find("Canvas").transform.Find("bow shop").GetComponent<Button>();
+
     }
 
     // Update is called once per frame

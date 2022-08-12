@@ -2832,9 +2832,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134889935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46be530dc667cf5448c102beabc7dd5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bca71ff140d01a4982257b4a609c4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: 0
+  SFXVolume: 0
+  musicVolume: 0
+  leftHandMode: 0
+  coins: 0
+  catbought: 0
+  bowbought: 0
 --- !u!4 &2134889937
 Transform:
   m_ObjectHideFlags: 0
